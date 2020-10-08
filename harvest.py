@@ -76,6 +76,7 @@ class Melon(object):
     """A melon in a melon harvest."""
 
     def __init__(self, melon_type, shape_rating, color_rating, field, harvested_by):
+        '''Initializes a melon object with melon type, shape rating, color rating, field, and harvester'''
 
         self.melon_type = melon_type
         self.shape_rating = shape_rating
@@ -84,7 +85,8 @@ class Melon(object):
         self.harvested_by= harvested_by
 
     def is_sellable(self):
-
+        '''Returns true if melon has shape and color rating over 5 and is not from field 3'''
+        
         if self.shape_rating > 5 and self.color_rating > 5 and self.field != 3:
             return True
         else:
@@ -114,7 +116,7 @@ def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
 
     for melon in melons:
-        
+
         if melon.is_sellable():
             sellability = '(CAN BE SOLD)'
         else:
